@@ -9,7 +9,7 @@ The function `getRemoteResponse` requires 4 parameters:
 * toSend
 
 # The Function
-`
+```
 // GET REMOTE RESPONSE
 
 const getRemoteResponse = (remoteScript, callback, customObject, toSend = null) => {
@@ -28,9 +28,11 @@ const getRemoteResponse = (remoteScript, callback, customObject, toSend = null) 
   
   XHR.addEventListener('readystatechange', getResponseText);
 }
-`
+```
 # Examples of Invoking the Function
 
+```
 const myRemoteFile = '/myremotefiles/myremotejson.json';
 
 getRemoteResponse(myRemoteFile, myFunction, {});
+```
