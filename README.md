@@ -1,5 +1,5 @@
 # Universal-Ajax
-A Universal Ajax function requiring 4 parameters. A core Ashiva Component.
+A concise Universal Ajax function requiring 4 parameters. A core Ashiva Component.
 
 The function `getRemoteResponse` requires 4 parameters:
 
