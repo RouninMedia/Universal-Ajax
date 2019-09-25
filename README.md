@@ -1,5 +1,6 @@
 # Universal-Ajax
-A concise Universal Ajax function requiring 4 parameters. A core Ashiva Component.
+
+A concise wrapper for XMLHttpRequest requiring 4 parameters and designed to be deployed everywhere.
 
 The function `getRemoteResponse` requires 4 parameters:
 
@@ -23,6 +24,11 @@ const getRemoteResponse = (remoteScript, callback, customObject, toSend = null) 
     if ((XHR.readyState === 4) && (XHR.status === 200)) {
 
       callback(XHR.responseText, customObject);
+    }
+
+    else if (XHR.status !== 200) {
+
+      console.log('Ajax Error: getRemoteResponse() called ' + remoteScript + ' and returned ' + XHR.status);
     }
   }
   
