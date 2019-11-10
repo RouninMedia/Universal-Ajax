@@ -1,6 +1,6 @@
 # Universal-Ajax
 
-A concise wrapper for XMLHttpRequest requiring 4 parameters and designed to be deployed everywhere.
+A concise wrapper for XMLHttpRequest designed to be deployed everywhere.
 
 The function `getRemoteResponse` requires 2 parameters:
 
