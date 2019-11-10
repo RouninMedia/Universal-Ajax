@@ -4,7 +4,7 @@ A concise wrapper for XMLHttpRequest requiring 4 parameters and designed to be d
 
 The function `getRemoteResponse` requires 2 parameters:
 
-* remoteScript
+* remoteURL
 * callback
 
 And there is one further *optional* parameter:
