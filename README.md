@@ -13,8 +13,6 @@ And there is one further *optional* parameter:
 
 # The Function
 ```
-// GET REMOTE RESPONSE
-
 const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
   if (!customObject.hasOwnProperty('dataToSend')) {customObject.dataToSend = null;}
