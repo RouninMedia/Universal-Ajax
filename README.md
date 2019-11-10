@@ -13,11 +13,18 @@ The function `getRemoteResponse` requires 4 parameters:
 ```
 // GET REMOTE RESPONSE
 
-const getRemoteResponse = (remoteScript, callback, customObject, toSend = null) => {
-  
+const getRemoteResponse = (remoteScript, callback, customObject = {}) => {
+
+  if (!customObject.hasOwnProperty('dataToSend')) {customObject.dataToSend = null;}
+
   const XHR = new XMLHttpRequest();
-  XHR.open('GET', remoteScript, true);
-  XHR.send(toSend);
+  let httpMethod = (customObject.dataToSend === null) ?  'GET' : 'POST';
+  XHR.open(httpMethod, remoteScript, true);
+
+  if (customObject.dataToSend !== null) {
+    
+    XHR.send(customObject.dataToSend);
+  }
   
   const getResponseText = () => {
   
@@ -40,5 +47,5 @@ const getRemoteResponse = (remoteScript, callback, customObject, toSend = null) 
 ```
 const myRemoteFile = '/myremotefiles/myremotejson.json';
 
-getRemoteResponse(myRemoteFile, myFunction, {});
+getRemoteResponse(myRemoteFile, myFunction);
 ```
