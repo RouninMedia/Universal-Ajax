@@ -15,16 +15,13 @@ And there is one further *optional* parameter:
 ```
 const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
-  if (!customObject.hasOwnProperty('dataToSend')) {customObject.dataToSend = null;}
+  let httpMethod = (customObject.hasOwnProperty('dataToSend')) ? 'POST' : 'GET';
+
+  if (httpMethod === 'GET') {customObject.dataToSend = null;}
 
   const XHR = new XMLHttpRequest();
-  let httpMethod = (customObject.dataToSend === null) ?  'GET' : 'POST';
-  XHR.open(httpMethod, remoteURL, true);
-
-  if (customObject.dataToSend !== null) {
-    
-    XHR.send(customObject.dataToSend);
-  }
+  XHR.open(httpMethod, remoteURL);
+  XHR.send(customObject.dataToSend);
   
   const getResponseText = () => {
   
