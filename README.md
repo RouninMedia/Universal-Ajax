@@ -27,7 +27,10 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
   
     if ((XHR.readyState === 4) && (XHR.status === 200)) {
 
-      callback(XHR.responseText, customObject);
+      if (callback !== null) {
+
+        callback(XHR.responseText, customObject);
+      }
     }
 
     else if (XHR.status !== 200) {
