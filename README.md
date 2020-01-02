@@ -21,6 +21,7 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
   const XHR = new XMLHttpRequest();
   XHR.open(httpMethod, remoteURL);
+  if (remoteURL.substr(-4, 4) === '.mjs') {XHR.overrideMimeType('application/javascript');}
   XHR.send(customObject.dataToSend);
   
   const getResponseText = () => {
