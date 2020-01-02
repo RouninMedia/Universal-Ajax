@@ -1,7 +1,6 @@
 const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
   let httpMethod = (customObject.hasOwnProperty('dataToSend')) ? 'POST' : 'GET';
-
   if (httpMethod === 'GET') {customObject.dataToSend = null;}
 
   const XHR = new XMLHttpRequest();
