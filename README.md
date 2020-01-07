@@ -35,7 +35,7 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
     else if (XHR.status !== 200) {
 
-      console.log('Ajax Error: getRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
+      console.log('⚠️ Ashiva Console: getRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
     }
   }
   
