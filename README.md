@@ -1,4 +1,4 @@
-# Universal-Ajax
+# getRemoteResponse for Ashiva
 
 A concise wrapper for XMLHttpRequest designed to be deployed everywhere.
 
