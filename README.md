@@ -1,8 +1,8 @@
-# getRemoteResponse for Ashiva
+# requestRemoteResponse for Ashiva
 
 A concise wrapper for XMLHttpRequest designed to be deployed everywhere.
 
-The function `getRemoteResponse` requires 2 parameters:
+The function `requestRemoteResponse` requires 2 parameters:
 
 * remoteURL
 * callback
@@ -13,7 +13,7 @@ And there is one further *optional* parameter:
 
 # The Function
 ```
-const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
+const requestRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
   let httpMethod = (customObject.hasOwnProperty('dataToSend')) ? 'POST' : 'GET';
   if (httpMethod === 'GET') {customObject.dataToSend = null;}
@@ -35,7 +35,7 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
     else if (XHR.status !== 200) {
 
-      console.log('⚠️ Ashiva Console: getRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
+      console.log('⚠️ Ashiva Console: requestRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
     }
   }
   
@@ -47,5 +47,5 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 ```
 const myRemoteFile = '/myremotefiles/myremotejson.json';
 
-getRemoteResponse(myRemoteFile, myFunction);
+requestRemoteResponse(myRemoteFile, myFunction);
 ```
