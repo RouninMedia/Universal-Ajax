@@ -1,4 +1,4 @@
-const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
+const requestRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
   let httpMethod = (customObject.hasOwnProperty('dataToSend')) ? 'POST' : 'GET';
   if (httpMethod === 'GET') {customObject.dataToSend = null;}
@@ -20,7 +20,7 @@ const getRemoteResponse = (remoteURL, callback, customObject = {}) => {
 
     else if (XHR.status !== 200) {
 
-      console.log('⚠️ Ashiva Console: getRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
+      console.log('⚠️ Ashiva Console: requestRemoteResponse() called ' + remoteURL + ' and returned ' + XHR.status);
     }
   }
   
