@@ -1,6 +1,6 @@
 # requestRemoteResponse for Ashiva
 
-A concise wrapper for XMLHttpRequest designed to be deployed everywhere.
+**requestRemoteResponse** (also known as **requestRemoteResource** or **r3**) is a concise wrapper for `XMLHttpRequest` (`XHR2`) designed to be deployed everywhere.
 
 The function `requestRemoteResponse` requires 2 parameters:
 
